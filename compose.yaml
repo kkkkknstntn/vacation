@@ -1,0 +1,14 @@
+services:
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: '-Xmx512m'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: false
